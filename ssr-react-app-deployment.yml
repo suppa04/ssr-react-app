@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ssr-react-node-app-deployment
+spec:
+  selector:
+    matchLabels:
+      app: ssr-react-node-app
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: ssr-react-node-app
+    spec:
+      containers:
+      - name: ssr-react-node-app
+        image: /Users/suppa04/Downloads/ssr-react-node-app
+        ports:
+        - containerPort: 4000
